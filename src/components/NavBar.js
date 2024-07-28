@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -25,7 +25,7 @@ const NavBar = () => {
         window.addEventListener("scroll", onScroll);
 
         return () => window.removeEventListener("scroll", onScroll);
-    })
+    }, [])
 
     const onUpdateActiveLink = (value) => {
         setActiveLink(value);
